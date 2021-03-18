@@ -64,7 +64,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DialogueEditorDLL\DialogueEditorDLL.csproj">
       <Project>{3e9e660c-96fd-4eb3-8643-c072cfa7b3b6}</Project>
-      <Name>DialogueEditor</Name>
+      <Name>DialogueEditorDLL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
