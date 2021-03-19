@@ -8,7 +8,7 @@ using System.Diagnostics;
 using DialogueEditor;
 using System.Text;
 
-namespace DemoBuild
+namespace GameBuild
 {
     static class Program
     {
@@ -42,8 +42,8 @@ namespace DemoBuild
 
             // Bind Nodes Attributes
             BindType<NodeConditionHasItemStack>();
-            BindType<NodeActionAddItemStack>();
-            BindType<NodeActionRemoveItemStack>();
+            BindType<NodeActionItemStack>();
+            BindType<NodeActionTag>();
             BindType<NodeActionLoadScene>();
             BindType<NodeActionSetPOIState>();
 

@@ -49,11 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Sources\NodeAttributes\QuantifiableActionType.cs" />
+    <Compile Include="Sources\NodeAttributes\NodeActionTag.cs" />
     <Compile Include="Sources\NodeAttributes\NodeActionSetPOIState.cs" />
     <Compile Include="Sources\NodeAttributes\NodeActionLoadScene.cs" />
     <Compile Include="Sources\NodeAttributes\NodeActionItemStack.cs" />
-    <Compile Include="Sources\NodeAttributes\NodeActionRemoveItemStack.cs" />
-    <Compile Include="Sources\NodeAttributes\NodeActionAddItemStack.cs" />
+    <Compile Include="Sources\NodeAttributes\NodeConditionHasTag.cs" />
     <Compile Include="Sources\NodeAttributes\NodeConditionHasItemStack.cs" />
     <Compile Include="Sources\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

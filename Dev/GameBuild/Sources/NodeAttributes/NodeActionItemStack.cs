@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 using DialogueEditor;
 
-namespace DemoBuild
+namespace GameBuild
 {
-    abstract class NodeActionItemStack : NodeAction
+    class NodeActionItemStack : NodeAction
     {
         //--------------------------------------------------------------------------------------------------------------
         // Serialized vars
 
         public string Item { get; set; }
         public int Amount { get; set; }
+        public QuantifiableActionType Action { get; set; }
 
         //--------------------------------------------------------------------------------------------------------------
         // Class Methods
@@ -23,6 +24,11 @@ namespace DemoBuild
         {
             Amount = 1;
             Item = "DefaultItem";
+        }
+
+        public sealed override string GetDisplayText()
+        {
+            return $"[{Action} ItemStack] {{ \"{ Item }\" : { Amount } }}";
         }
     }
 }

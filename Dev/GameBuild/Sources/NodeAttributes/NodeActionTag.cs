@@ -8,18 +8,18 @@ using DialogueEditor;
 
 namespace GameBuild
 {
-    class NodeActionLoadScene : NodeAction
+    class NodeActionTag : NodeAction
     {
-        public string SceneName { get; set; }
+        public string Tag { get; set; }
+        public QuantifiableActionType Action { get; set; }
 
-        public NodeActionLoadScene()
-        {
-            SceneName = "DefaultScene";
+        public NodeActionTag (){
+            Tag = "DefaultTag";
         }
 
         public override string GetDisplayText()
         {
-            return $"[Load Scene] \"{SceneName}\"";
+            return $"[{Action} Tag] \"{ Tag }\"";
         }
     }
 }

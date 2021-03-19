@@ -1,6 +1,6 @@
 ﻿using DialogueEditor;
 
-namespace DemoBuild
+namespace GameBuild
 {
     class NodeActionSetPOIState : NodeAction
     {
