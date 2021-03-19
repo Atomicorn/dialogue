@@ -45,7 +45,8 @@ namespace DemoBuild
             BindType<NodeActionAddItemStack>();
             BindType<NodeActionRemoveItemStack>();
             BindType<NodeActionLoadScene>();
-            
+            BindType<NodeActionSetPOIState>();
+
             // Delegate post-load project
             EditorCore.OnProjectLoad = delegate
             {

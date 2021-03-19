@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Sources\NodeAttributes\NodeActionSetPOIState.cs" />
     <Compile Include="Sources\NodeAttributes\NodeActionLoadScene.cs" />
     <Compile Include="Sources\NodeAttributes\NodeActionItemStack.cs" />
     <Compile Include="Sources\NodeAttributes\NodeActionRemoveItemStack.cs" />
