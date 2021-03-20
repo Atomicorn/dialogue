@@ -49,6 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Sources\NodeAttributes\NodeActionSetPOICurrentDialog.cs" />
+    <Compile Include="Sources\NodeAttributes\NodeConditionPOIHasState.cs" />
+    <Compile Include="Sources\NodeAttributes\POIState.cs" />
     <Compile Include="Sources\NodeAttributes\QuantifiableActionType.cs" />
     <Compile Include="Sources\NodeAttributes\NodeActionTag.cs" />
     <Compile Include="Sources\NodeAttributes\NodeActionSetPOIState.cs" />

@@ -4,14 +4,6 @@ namespace GameBuild
 {
     class NodeActionSetPOIState : NodeAction
     {
-        public enum POIState
-        {
-            Hidden = 0,
-            Locked = 1,
-            Unlocked = 2,
-            Highlighted = 3
-        }
-
         public string POIName { get; set; }
         public POIState State { get; set; }
 

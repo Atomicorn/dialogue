@@ -33,19 +33,19 @@ namespace GameBuild
             //..............................................................
             // Here you can declare custom types, bindings and menus
 
-            // Animations
-            EditorCore.Animations.Add("Common", new List<string>() { "WaveHands", "CrossArms" });
-            EditorCore.Animations.Add("Angry", new List<string>() { "Speak_01", "Speak_02" });
-
             // Additional lists items
             EditorCore.CustomLists["Builds"].Add("Dwarf", "Dwarf");
 
             // Bind Nodes Attributes
             BindType<NodeConditionHasItemStack>();
+            BindType<NodeConditionPOIHasState>();
+            BindType<NodeConditionHasTag>();
+
             BindType<NodeActionItemStack>();
             BindType<NodeActionTag>();
             BindType<NodeActionLoadScene>();
             BindType<NodeActionSetPOIState>();
+            BindType<NodeActionSetPOICurrentDialog>();
 
             // Delegate post-load project
             EditorCore.OnProjectLoad = delegate
