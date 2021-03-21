@@ -28,6 +28,15 @@ namespace GameBuild
             EditorCore.InitDefaultWindow();
             EditorCore.InitDefaultLists();
 
+            Dictionary<string, string> dialogueChoicesToValues;
+
+            if (!EditorCore.CustomLists.TryGetValue("DialogueChoices", out dialogueChoicesToValues))
+                EditorCore.CustomLists["DialogueChoices"] = dialogueChoicesToValues = new Dictionary<string, string>();
+
+            dialogueChoicesToValues["GuestItemsSelection"] = "Guest's Items Selection";
+            dialogueChoicesToValues["CirceItemsSelection"] = "Circe's Items Selection";
+            dialogueChoicesToValues["DialoguesSelection"] = "Dialogues Selection";
+
             EditorCore.VersionProject = "1.0.0";
 
             //..............................................................
