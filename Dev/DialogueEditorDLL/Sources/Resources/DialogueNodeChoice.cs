@@ -17,6 +17,7 @@ namespace DialogueEditor
         public float Timer { get; set; }
         public bool HideTimer { get; set; }
         public string Blueprint { get; set; }
+        public string CharacterID { get; set; }
 
         /// <summary>
         /// List of available replies
@@ -34,6 +35,7 @@ namespace DialogueEditor
             Timer = 0.0f;
             HideTimer = false;
             Blueprint = "";
+            CharacterID = "";
 
             Replies = new List<DialogueNodeReply>();
             RepliesIDs = new List<int>();

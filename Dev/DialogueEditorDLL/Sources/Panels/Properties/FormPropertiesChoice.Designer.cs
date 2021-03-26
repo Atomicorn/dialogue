@@ -1,4 +1,6 @@
-﻿namespace DialogueEditor
+﻿using System;
+
+namespace DialogueEditor
 {
     partial class FormPropertiesChoice
     {
@@ -29,16 +31,16 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Label label3;
-            System.Windows.Forms.Label label1;
             System.Windows.Forms.GroupBox groupBox1;
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxBlueprint = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBoxCharacter = new System.Windows.Forms.ComboBox();
             this.checkBoxTimer = new System.Windows.Forms.CheckBox();
             this.textBoxTimer = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxWorkstring = new System.Windows.Forms.RichTextBox();
             label3 = new System.Windows.Forms.Label();
-            label1 = new System.Windows.Forms.Label();
             groupBox1 = new System.Windows.Forms.GroupBox();
             groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -52,26 +54,18 @@
             label3.TabIndex = 19;
             label3.Text = "Workstring :";
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(6, 112);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(121, 13);
-            label1.TabIndex = 20;
-            label1.Text = "(Will not appear ingame)";
-            // 
             // groupBox1
             // 
             groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             groupBox1.Controls.Add(this.label4);
             groupBox1.Controls.Add(this.comboBoxBlueprint);
+            groupBox1.Controls.Add(this.label5);
+            groupBox1.Controls.Add(this.comboBoxCharacter);
             groupBox1.Controls.Add(this.checkBoxTimer);
             groupBox1.Controls.Add(this.textBoxTimer);
             groupBox1.Controls.Add(this.label2);
             groupBox1.Controls.Add(this.textBoxWorkstring);
-            groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(label3);
             groupBox1.Location = new System.Drawing.Point(3, 3);
             groupBox1.Name = "groupBox1";
@@ -98,6 +92,27 @@
             this.comboBoxBlueprint.Size = new System.Drawing.Size(249, 21);
             this.comboBoxBlueprint.TabIndex = 24;
             this.comboBoxBlueprint.SelectedIndexChanged += new System.EventHandler(this.OnBlueprintChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 212);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Character ID :";
+            // 
+            // comboBoxCharacter
+            // 
+            this.comboBoxCharacter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxCharacter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCharacter.FormattingEnabled = true;
+            this.comboBoxCharacter.Location = new System.Drawing.Point(85, 209);
+            this.comboBoxCharacter.Name = "comboBoxCharacter";
+            this.comboBoxCharacter.Size = new System.Drawing.Size(230, 21);
+            this.comboBoxCharacter.TabIndex = 1;
+            this.comboBoxCharacter.SelectedIndexChanged += new System.EventHandler(this.OnSpeakerChanged);
             // 
             // checkBoxTimer
             // 
@@ -153,6 +168,16 @@
 
         }
 
+        private void OnSpeakerChanged(object sender, EventArgs e)
+        {
+            if (!ready)
+                return;
+
+            dialogueNode.CharacterID = comboBoxCharacter.SelectedValue as string;
+            document.RefreshTreeNode(treeNode);
+            document.SetDirty();
+        }
+
         #endregion
 
         private System.Windows.Forms.RichTextBox textBoxWorkstring;
@@ -160,6 +185,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox checkBoxTimer;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBoxBlueprint;
+        private System.Windows.Forms.ComboBox comboBoxCharacter;
     }
 }

@@ -71,6 +71,23 @@ namespace DialogueEditor
                 comboBoxBlueprint.SelectedValue = dialogueNode.Blueprint;
             }
 
+            Project project = ResourcesHandler.Project;
+
+            //Actors
+            if (ResourcesHandler.Project.ListActors.Count > 0)
+            {
+                var actors = new Dictionary<string, string>();
+                actors.Add("", "");
+
+                foreach (Actor actor in project.ListActors)
+                    actors.Add(actor.ID, actor.Name);
+
+                comboBoxCharacter.DataSource    = new BindingSource(actors, null);
+                comboBoxCharacter.ValueMember   = "Key";
+                comboBoxCharacter.DisplayMember = "Value";
+                comboBoxCharacter.SelectedValue = dialogueNode.CharacterID;
+            }
+
             checkBoxTimer.Checked = dialogueNode.HideTimer;
 
             ready = true;
@@ -118,7 +135,7 @@ namespace DialogueEditor
         {
             if (!ready)
                 return;
-
+            
             dialogueNode.Blueprint = (sender as ComboBox).SelectedValue as string;
 
             document.RefreshTreeNode(treeNode);
